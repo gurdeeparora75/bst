@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="BrowserStack Test automtion"
+	thread-count="4" parallel="tests" verbose="3">
+ <test name="Nopackage" preserve-order="true">
+ <classes>
+     <class name="src\mainTestClass.java"/>
+      <class name="/src/TestClass4.java"/>
+     
+     
+    </classes>
+  </test> 
+</suite> 
+	
