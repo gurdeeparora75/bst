@@ -23,6 +23,8 @@ class TestClass1 implements Runnable {
 		capsHashtable.put("os_version", "10");
     	capsHashtable.put("build", "browserstack-build-1");
 		capsHashtable.put("name", "Thread 1");
+		
+		
 		mainTestClass r1 = new mainTestClass();
 		r1.executeTest(capsHashtable);
     }
@@ -57,9 +59,7 @@ public class mainTestClass {
 	public static final String USERNAME = "gurdeepkaurarora_a1AtYr";
 	public static final String AUTOMATE_KEY = "3XSs9xBpocEsdQhoFCDN";
 	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-	String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
-	String browserstackLocal = System.getenv("BROWSERSTACK_LOCAL");
-	String browserstackLocalIdentifier = System.getenv("BROWSERSTACK_LOCAL_IDENTIFIER");
+	
 	public static void main(String[] args) throws Exception {
 		Thread object1 = new Thread(new TestClass1());
 		object1.start();
@@ -73,12 +73,7 @@ public class mainTestClass {
 	public void executeTest(Hashtable<String, String> capsHashtable) {
 		String key;
 		DesiredCapabilities caps = new DesiredCapabilities();
-		System.out.println(buildName);
-		System.out.println(browserstackLocal);
-		System.out.println(browserstackLocalIdentifier);
-		caps.setCapability("build", buildName);
-		caps.setCapability("browserstack.local", browserstackLocal);
-		caps.setCapability("browserstack.localIdentifier", browserstackLocalIdentifier);
+		
 		
 		// Iterate over the hashtable and set the capabilities
 		Set<String> keys = capsHashtable.keySet();
